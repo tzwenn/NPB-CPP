@@ -238,7 +238,6 @@ int main(int argc, char* argv[]){
 	for(i=1;i<=T_LAST;i++){timer_clear(i);}
 	timer_start(1);
 	for(step=1;step<=niter;step++){
-		if((step%20)==0||step==1){printf(" Time step %4d\n",step);}
 		adi();
 	}
 	timer_stop(1);

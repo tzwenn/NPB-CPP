@@ -132,7 +132,7 @@ Authors of the C++ code:
 #define NUM_KEYS TOTAL_KEYS
 #define SIZE_OF_BUFFERS NUM_KEYS                                           
 
-#define MAX_ITERATIONS 60
+#define MAX_ITERATIONS 55
 #define TEST_ARRAY_SIZE 5
 
 /*************************************/

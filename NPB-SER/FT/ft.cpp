@@ -501,7 +501,6 @@ static void checksum(int i,
 		chk = dcomplex_add(chk, u1[s][r][q]);
 	}
 	chk = dcomplex_div2(chk, (double)(NTOTAL));
-	printf(" T =%5d     Checksum =%22.12e%22.12e\n", i, chk.real, chk.imag);
 	sums[i] = chk;
 }
 

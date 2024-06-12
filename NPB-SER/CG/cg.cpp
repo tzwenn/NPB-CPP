@@ -351,8 +351,6 @@ int main(int argc, char **argv){
 		}
 		norm_temp2 = 1.0 / sqrt(norm_temp2);
 		zeta = SHIFT + 1.0 / norm_temp1;
-		if(it==1){printf("\n   iteration           ||r||                 zeta\n");}
-		printf("    %5d       %20.14e%20.13e\n", it, rnorm, zeta);
 
 		/* normalize z to obtain x */
 		for(j = 0; j < lastcol - firstcol + 1; j++){

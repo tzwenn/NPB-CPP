@@ -304,7 +304,6 @@ int main(int argc, char *argv[]){
 	norm2u3(r,n1,n2,n3,&rnm2,&rnmu,nx[lt],ny[lt],nz[lt]);
 
 	for(it = 1; it <= nit; it++){
-		if((it==1)||(it==nit)||((it%5)==0)){printf("  iter %3d\n",it);}
 		if(timeron){timer_start(T_MG3P);}
 		mg3P(u,v,r,a,c,n1,n2,n3,k);
 		if(timeron){timer_stop(T_MG3P);}

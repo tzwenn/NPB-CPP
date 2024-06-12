@@ -2774,9 +2774,6 @@ void ssor(int niter){
 	 * ---------------------------------------------------------------------
 	 */
 	for(istep=1; istep<=niter; istep++){
-		if((istep%20)==0||istep==itmax||istep==1){
-			if(niter>1){printf(" Time step %4d\n",istep);}
-		}
 		/*
 		 * ---------------------------------------------------------------------
 		 * perform SSOR iteration
