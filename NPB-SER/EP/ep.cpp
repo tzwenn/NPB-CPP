@@ -60,7 +60,7 @@ Authors of the C++ code:
  * not affect the results.
  * --------------------------------------------------------------------
  */
-#define	MK 16
+#define	MK 13
 #define	MM (M - MK)
 #define	NN (1 << MM)
 #define	NK (1 << MK)

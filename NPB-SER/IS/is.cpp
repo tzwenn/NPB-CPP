@@ -60,6 +60,15 @@ Authors of the C++ code:
 #endif
 
 /*************/
+/*  CLASS T  */
+/*************/
+#if CLASS == 'T'
+#define TOTAL_KEYS_LOG_2 14
+#define MAX_KEY_LOG_2 9 
+#define NUM_BUCKETS_LOG_2 7
+#endif
+
+/*************/
 /*  CLASS S  */
 /*************/
 #if CLASS == 'S'
