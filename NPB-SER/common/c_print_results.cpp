@@ -68,15 +68,15 @@ void c_print_results(char* name,
 		char* cflags,
 		char* clinkflags,
 		char* rand){
-	printf("\n\n %s Benchmark Completed\n", name);
-	printf(" class_npb       =                        %c\n", class_npb);
+	fprintf(stderr, "\n\n %s Benchmark Completed\n", name);
+	fprintf(stderr, " class_npb       =                        %c\n", class_npb);
 	if((name[0]=='I')&&(name[1]=='S')){
 		if(n3==0){
 			long nn = n1;
 			if(n2!=0){nn*=n2;}
-			printf(" Size            =             %12ld\n", nn); /* as in IS */
+			fprintf(stderr, " Size            =             %12ld\n", nn); /* as in IS */
 		}else{
-			printf(" Size            =             %4dx%4dx%4d\n", n1,n2,n3);
+			fprintf(stderr, " Size            =             %4dx%4dx%4d\n", n1,n2,n3);
 		}
 	}else{
 		char size[16];
@@ -90,60 +90,60 @@ void c_print_results(char* name,
 					j--;
 				}
 				size[j+1] = '\0';
-				printf(" Size            =          %15s\n", size);
+				fprintf(stderr, " Size            =          %15s\n", size);
 			}else{
-				printf(" Size            =             %12d\n", n1);
+				fprintf(stderr, " Size            =             %12d\n", n1);
 			}
 		}else{
-			printf(" Size            =           %4dx%4dx%4d\n", n1, n2, n3);
+			fprintf(stderr, " Size            =           %4dx%4dx%4d\n", n1, n2, n3);
 		}
 	}	
-	printf(" Iterations      =             %12d\n", niter); 
-	printf(" Time in seconds =           %12.4f\n", t);
-	printf(" Mop/s total     =           %12.4f\n", mops);
-	printf(" Operation type  = %24s\n", optype);
+	fprintf(stderr, " Iterations      =             %12d\n", niter); 
+	fprintf(stderr, " Time in seconds =           %12.4f\n", t);
+	fprintf(stderr, " Mop/s total     =           %12.4f\n", mops);
+	fprintf(stderr, " Operation type  = %24s\n", optype);
 	if(passed_verification < 0){
-		printf( " Verification    =            NOT PERFORMED\n");
+		fprintf(stderr,  " Verification    =            NOT PERFORMED\n");
 	}else if(passed_verification){
-		printf(" Verification    =               SUCCESSFUL\n");
+		fprintf(stderr, " Verification    =               SUCCESSFUL\n");
 	}else{
-		printf(" Verification    =             UNSUCCESSFUL\n");
+		fprintf(stderr, " Verification    =             UNSUCCESSFUL\n");
 	}
-	printf(" Version         =             %12s\n", npbversion);
-	printf(" Compiler ver    =             %12s\n", compilerversion);
-	printf(" Compile date    =             %12s\n", compiletime);
-	printf("\n Compile options:\n");
-	printf("    CC           = %s\n", cc);
-	printf("    CLINK        = %s\n", clink);
-	printf("    C_LIB        = %s\n", c_lib);
-	printf("    C_INC        = %s\n", c_inc);
-	printf("    CFLAGS       = %s\n", cflags);
-	printf("    CLINKFLAGS   = %s\n", clinkflags);
-	printf("    RAND         = %s\n", rand);
+	fprintf(stderr, " Version         =             %12s\n", npbversion);
+	fprintf(stderr, " Compiler ver    =             %12s\n", compilerversion);
+	fprintf(stderr, " Compile date    =             %12s\n", compiletime);
+	fprintf(stderr, "\n Compile options:\n");
+	fprintf(stderr, "    CC           = %s\n", cc);
+	fprintf(stderr, "    CLINK        = %s\n", clink);
+	fprintf(stderr, "    C_LIB        = %s\n", c_lib);
+	fprintf(stderr, "    C_INC        = %s\n", c_inc);
+	fprintf(stderr, "    CFLAGS       = %s\n", cflags);
+	fprintf(stderr, "    CLINKFLAGS   = %s\n", clinkflags);
+	fprintf(stderr, "    RAND         = %s\n", rand);
 #ifdef SMP
 	evalue = getenv("MP_SET_NUMTHREADS");
-	printf("   MULTICPUS = %s\n", evalue);
+	fprintf(stderr, "   MULTICPUS = %s\n", evalue);
 #endif    
 	/* 
-	 * printf(" Please send the results of this run to:\n\n");
-	 * printf(" NPB Development Team\n");
-	 * printf(" Internet: npb@nas.nasa.gov\n \n");
-	 * printf(" If email is not available, send this to:\n\n");
-	 * printf(" MS T27A-1\n");
-	 * printf(" NASA Ames Research Center\n");
-	 * printf(" Moffett Field, CA  94035-1000\n\n");
-	 * printf(" Fax: 650-604-3957\n\n");
+	 * fprintf(stderr, " Please send the results of this run to:\n\n");
+	 * fprintf(stderr, " NPB Development Team\n");
+	 * fprintf(stderr, " Internet: npb@nas.nasa.gov\n \n");
+	 * fprintf(stderr, " If email is not available, send this to:\n\n");
+	 * fprintf(stderr, " MS T27A-1\n");
+	 * fprintf(stderr, " NASA Ames Research Center\n");
+	 * fprintf(stderr, " Moffett Field, CA  94035-1000\n\n");
+	 * fprintf(stderr, " Fax: 650-604-3957\n\n");
 	 */
-	printf("\n\n");
+	fprintf(stderr, "\n\n");
 	
-	printf("----------------------------------------------------------------------\n");
-	printf("    NPB-CPP is developed by: \n");
-	printf("        Dalvan Griebler\n");
-	printf("        Gabriell Araujo (Sequential Porting)\n");
-	printf("        Júnior Löff (Parallel Implementation)\n");
-	printf("\n");
-	printf("    In case of questions or problems, please send an e-mail to us:\n");	
-	printf("        dalvan.griebler; gabriell.araujo; junior.loff@edu.pucrs.br\n");
-	printf("----------------------------------------------------------------------\n");
-	printf("\n");
+	fprintf(stderr, "----------------------------------------------------------------------\n");
+	fprintf(stderr, "    NPB-CPP is developed by: \n");
+	fprintf(stderr, "        Dalvan Griebler\n");
+	fprintf(stderr, "        Gabriell Araujo (Sequential Porting)\n");
+	fprintf(stderr, "        Júnior Löff (Parallel Implementation)\n");
+	fprintf(stderr, "\n");
+	fprintf(stderr, "    In case of questions or problems, please send an e-mail to us:\n");	
+	fprintf(stderr, "        dalvan.griebler; gabriell.araujo; junior.loff@edu.pucrs.br\n");
+	fprintf(stderr, "----------------------------------------------------------------------\n");
+	fprintf(stderr, "\n");
 }
