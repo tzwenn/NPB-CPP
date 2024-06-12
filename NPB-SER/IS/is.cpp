@@ -132,7 +132,7 @@ Authors of the C++ code:
 #define NUM_KEYS TOTAL_KEYS
 #define SIZE_OF_BUFFERS NUM_KEYS                                           
 
-#define MAX_ITERATIONS 10
+#define MAX_ITERATIONS 60
 #define TEST_ARRAY_SIZE 5
 
 /*************************************/
@@ -314,10 +314,12 @@ int main(int argc, char** argv){
 	/* Start timer */             
 	timer_start( T_BENCHMARKING );
 
+	const int subiter = 100;
 	/* This is the main iteration */
 	for(iteration=1; iteration<=MAX_ITERATIONS; iteration++){
-		if(CLASS != 'S')printf("        %d\n", iteration);
-		rank( iteration );
+		for (int i = 0; i < subiter; i++) {
+	 		rank( iteration );
+		}
 	}
 
 	/* End of timing, obtain maximum time of all processors */

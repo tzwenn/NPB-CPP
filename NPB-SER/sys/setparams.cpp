@@ -375,7 +375,7 @@ void write_sp_info(FILE *fp, char class_npb){
 	int problem_size, niter;
 	const char *dt;
 	if(class_npb == 'S'){problem_size = 12; dt = "0.015"; niter = 100;}
-	else if(class_npb == 'T'){problem_size = 8; dt = "0.015"; niter = 1200;}
+	else if(class_npb == 'T'){problem_size = 8; dt = "0.015"; niter = 3500;}
 	else if(class_npb == 'W'){problem_size = 36; dt = "0.0015"; niter = 400;}
 	else if(class_npb == 'A'){problem_size = 64; dt = "0.0015"; niter = 400;}
 	else if(class_npb == 'B'){problem_size = 102; dt = "0.001"; niter = 400;}
@@ -398,7 +398,7 @@ void write_bt_info(FILE *fp, char class_npb){
 	int problem_size, niter;
 	const char *dt;
 	if (class_npb == 'S'){problem_size = 12; dt = "0.010"; niter = 60;}
-	else if(class_npb == 'T'){problem_size = 8; dt = "0.010"; niter = 400;}
+	else if(class_npb == 'T'){problem_size = 8; dt = "0.010"; niter = 900;}
 	else if(class_npb == 'W'){problem_size = 24; dt = "0.0008"; niter = 200;}
 	else if(class_npb == 'A'){problem_size = 64; dt = "0.0008"; niter = 200;}
 	else if(class_npb == 'B'){problem_size = 102; dt = "0.0003"; niter = 200;}
@@ -439,7 +439,7 @@ void write_lu_info(FILE *fp, char class_npb){
 	int xdiv, ydiv; /* number of cells in x and y direction */
 	const char *dt_default;
 	if(class_npb == 'S'){problem_size = 12; dt_default = "0.5"; itmax = 50;}
-	else if(class_npb == 'T'){problem_size = 8; dt_default = "0.5"; itmax = 1000;}
+	else if(class_npb == 'T'){problem_size = 8; dt_default = "0.5"; itmax = 2000;}
 	else if(class_npb == 'W'){problem_size = 33; dt_default = "1.5e-3"; itmax = 300;}
 	else if(class_npb == 'A'){problem_size = 64; dt_default = "2.0"; itmax = 250;}
 	else if(class_npb == 'B'){problem_size = 102; dt_default = "2.0"; itmax = 250;}
@@ -471,7 +471,7 @@ void write_mg_info(FILE *fp, char class_npb)
 	int problem_size, nit, log2_size, lt_default, lm;
 	int ndim1, ndim2, ndim3;
 	if(class_npb == 'S'){problem_size = 32; nit = 4;}
-	else if(class_npb == 'T'){problem_size = 16; nit = 400;}
+	else if(class_npb == 'T'){problem_size = 16; nit = 2750;}
 	else if(class_npb == 'W'){problem_size = 128; nit = 4;}
 	else if(class_npb == 'A'){problem_size = 256; nit = 4;}
 	else if(class_npb == 'B'){problem_size = 256; nit = 20;}
@@ -537,7 +537,7 @@ void write_cg_info(FILE *fp, char class_npb){
 	if(class_npb == 'S'){
 		na=1400; nonzer=7; niter=15; shift=shiftS;}
 	else if(class_npb == 'T'){
-		na=200; nonzer=7; niter=400; shift=shiftT;}
+		na=200; nonzer=7; niter=850; shift=shiftT;}
 	else if(class_npb == 'W'){
 		na=7000; nonzer=8; niter=15; shift=shiftW;}
 	else if(class_npb == 'A'){
@@ -572,7 +572,7 @@ void write_ft_info(FILE *fp, char class_npb){
 	 */
 	int nx, ny, nz, maxdim, niter;
 	if(class_npb == 'S'){nx = 64; ny = 64; nz = 64; niter = 6;}
-	else if(class_npb == 'T'){nx = 16; ny = 16; nz = 16; niter = 1000;}
+	else if(class_npb == 'T'){nx = 16; ny = 16; nz = 16; niter = 2750;}
 	else if(class_npb == 'W'){nx = 128; ny = 128; nz = 32; niter = 6;}
 	else if(class_npb == 'A'){nx = 256; ny = 256; nz = 128; niter = 6;}
 	else if(class_npb == 'B'){nx = 512; ny = 256; nz = 256; niter = 20;}
